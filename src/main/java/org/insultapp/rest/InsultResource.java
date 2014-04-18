@@ -11,6 +11,6 @@ public class InsultResource {
 	@GET
 	@Produces(value = MediaType.TEXT_PLAIN)
 	public String insult() {
-		return "Hello, code monkey";
+		return "Hello, code monkey!";
 	}
 }
