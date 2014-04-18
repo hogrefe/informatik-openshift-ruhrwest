@@ -28,14 +28,12 @@ public class PostgresInsultGenerator implements InsultGenerator {
 				+ " " + getWord("noun");
 	}
 
-	@SuppressWarnings("unchecked")
 	private String getWord(String table) {
 		String sql = "select string from " + table
 				+ " offset random()* (select count(*) from " + table
 				+ ") limit 1;";
-		List<String> results = entityManager.createNativeQuery(sql,
-				String.class).getResultList();
-		return results.get(0);
+		List results = entityManager.createNativeQuery(sql).getResultList();
+		return (String)results.get(0);
 	}
 
 }
