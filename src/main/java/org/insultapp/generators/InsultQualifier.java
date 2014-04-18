@@ -19,7 +19,3 @@ import javax.inject.Qualifier;
 public @interface InsultQualifier {
 	Type type(); 
 }
-
-enum Type {
-	FIRST_ADJ, SECOND_ADJ, NOUN
-}
