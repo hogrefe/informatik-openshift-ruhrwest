@@ -6,6 +6,7 @@ import javax.inject.Inject;
 
 import org.insultapp.utils.RandomNumber;
 
+@InsultGeneratorQualifier(type = InsultGeneratorType.INMEMORY)
 public class InmemoryInsultGenerator implements InsultGenerator {
 
 	@Inject
@@ -32,6 +33,7 @@ public class InmemoryInsultGenerator implements InsultGenerator {
 
 	private String generateResult() {
 		int number = RandomNumber.randInt(0, firstAdjs.size() - 1);
-		return firstAdjs.get(number) + " " + secondAdjs.get(number) + " " + nouns.get(number);
+		return firstAdjs.get(number) + " " + secondAdjs.get(number) + " "
+				+ nouns.get(number);
 	}
 }

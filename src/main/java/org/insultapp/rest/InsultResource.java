@@ -8,11 +8,14 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import org.insultapp.generators.InsultGenerator;
+import org.insultapp.generators.InsultGeneratorQualifier;
+import org.insultapp.generators.InsultGeneratorType;
 
 @Path("/")
 public class InsultResource {
 
 	@Inject
+	@InsultGeneratorQualifier(type = InsultGeneratorType.POSTGRES)
 	private InsultGenerator insultGenerator;
 
 	@GET
